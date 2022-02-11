@@ -1,0 +1,34 @@
+CHECK OUT COMPILER EXPLORER
+
+MOVQ   - Moving data from one source to another location
+    MOVQ    SRC     DST
+    int     i    =  5
+ 
+MOVQ -> move 8 bytes
+MOVL -> move 4 bytes
+
+
+%rax - 64 bit/8 byte accumulating register
+%eax - 32 bit/4 byte acculuating register
+%rsp - stack pointer(keeps track of where our stack is)
+%rbp - base pointer. Where program starts
+
+%rdi - first program argument in function
+%rsi - second argument in a function
+%rdx - third argument in a function
+%rip - program counter
+%r8-%r15 - These ones are actually the general purpose registers
+
+ret - return value
+
+() in assembly is dereferencing
+mystery:                              void mystery(<type> a, <type> b){
+  movq (%rdi), %rax                       long t0 = *a;
+  movq (%rsi), %rdx                       long t1 = *b;
+  movq %rdx, (%rdi)                       *a = t1;
+  movq %rax, (%rsi)                       *b = t0;
+  ret                                         
+  
+  void mystery(<type> a, <type> b) {
+    long to
+  }
